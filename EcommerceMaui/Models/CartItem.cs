@@ -10,9 +10,13 @@ namespace FruitVegBasket.Models
 
         public decimal Price { get; set; }
 
+
+        //checks if the amount is being updataed,
+        //that's why adding observableproperty and notifyproperty (something should change in the ammount)...
         [ObservableProperty, NotifyPropertyChangedFor(nameof(Amount))]
+        
         private int _quantity;
 
         public decimal Amount => Price * Quantity;
     }
-}
+} 

@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using FruitVegBasket.Services;
+using FruitVegBasket.ViewModels;
+using FruitVegBasket.Pages;
 
 namespace FruitVegBasket
 {
@@ -17,6 +20,10 @@ namespace FruitVegBasket
                 })
 
             .UseMauiCommunityToolkit();
+
+            builder.Services.AddSingleton<HomePageViewModel>();
+            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<CategoryService>();
 
 #if DEBUG
             builder.Logging.AddDebug();
